@@ -1,0 +1,63 @@
+{
+  "name": "gatsby-starter-mdx-basic",
+  "description": "Gatsby starter MDX basic",
+  "version": "1.0.0",
+  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "dependencies": {
+    "@freesewing/components": "^2.8.1",
+    "@freesewing/css-theme": "^2.9.0-rc.5",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@mdx-js/mdx": "^1.1.5",
+    "@mdx-js/react": "^1.1.5",
+    "gatsby": "^2.13.50",
+    "gatsby-image": "^2.2.8",
+    "gatsby-plugin-catch-links": "^2.3.12",
+    "gatsby-plugin-manifest": "^2.2.4",
+    "gatsby-plugin-mdx": "^1.0.0",
+    "gatsby-plugin-netlify": "^2.3.15",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-nprogress": "^2.3.11",
+    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-sass": "^2.3.13",
+    "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-remark-autolink-headers": "^2.3.13",
+    "gatsby-remark-copy-linked-files": "^2.3.15",
+    "gatsby-remark-images": "^3.3.30",
+    "gatsby-remark-jargon": "^2.8.1",
+    "gatsby-remark-prismjs": "^3.5.13",
+    "gatsby-remark-smartypants": "^2.3.11",
+    "gatsby-source-filesystem": "^2.1.8",
+    "gatsby-transformer-sharp": "^2.2.5",
+    "node-sass": "^4.14.1",
+    "open-color-js": "^0.0.1",
+    "prismjs": "^1.21.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0",
+    "typeface-raleway": "^0.0.75",
+    "typeface-roboto-condensed": "^0.0.75"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopherbiscardi/gatsby-starter-mdx-basic"
+  }
+}
