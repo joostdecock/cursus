@@ -13,6 +13,7 @@ import 'typeface-roboto-condensed'
 import MobileMenu from '../menus/mobile'
 import useScrolledDown from '../../hooks/useScrolledDown'
 import Meta from './meta'
+import './cursus.scss'
 
 /* This component should wrap all page content */
 const AppWrapper = ({ app, children, context = null }) => {

@@ -1,5 +1,6 @@
 const jargon = {
-    test: 'This is a test'
+  it: 'Information Technology',
+  ict: 'Information and Communication Technology'
 }
 
 module.exports = jargon

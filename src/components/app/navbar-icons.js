@@ -3,7 +3,7 @@ import IconButton from '@material-ui/core/IconButton'
 
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
-import SearchIcon from '@material-ui/icons/Search'
+import JargonIcon from '@material-ui/icons/Book'
 
 const NavbarIcons = ({ translate, toggleDarkMode, theme, language }) => {
   const colors = {
@@ -33,12 +33,12 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme, language }) => {
     <>
       <IconButton
         style={style.iconButton}
-        aria-label="menu"
+        aria-label="jargon"
         color="inherit"
-        href="/search/"
-        title='Zoeken'
+        href="/jargon/"
+        title='Verklarende woordenlijst'
       >
-        <SearchIcon style={style.icon} />
+        <JargonIcon style={style.icon} />
       </IconButton>
       <IconButton
         style={style.darkModeButton}

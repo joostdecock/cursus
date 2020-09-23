@@ -1,0 +1,82 @@
+@import '../../../node_modules/open-color/open-color.scss';
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway';
+}
+
+h1 {
+  font-weight: 200;
+}
+h2 {
+  border-color: $oc-pink-1;
+}
+h2, h3, h4 {
+  font-weight: 300;
+}
+h5, h6 {
+  font-weight: 400;
+}
+
+.style-wrapper.light a:not(.MuiButton-root),
+.theme-wrapper.light a:not(.MuiButton-root) {
+  color: $oc-pink-5;
+}
+.style-wrapper.dark a:not(.MuiButton-root),
+.theme-wrapper.dark a:not(.MuiButton-root) {
+  color: $oc-pink-3;
+}
+.style-wrapper.light a.anchor svg path,
+.theme-wrapper.light a.anchor svg path {
+  stroke: $oc-pink-4;
+}
+.style-wrapper.dark a.anchor svg path,
+.theme-wrapper.dark a.anchor svg path {
+  stroke: $oc-pink-4;
+}
+
+.theme-wrapper.light > div.fs-sa > aside > div.sticky {
+  ul.aside-main-menu li {
+    a svg {
+      color: $oc-pink-4;
+    }
+    a:hover {
+      background-color: $oc-pink-0;
+    }
+    a.active {
+      background-color: $oc-pink-0;
+    }
+  }
+  div.aside-context {
+    a:hover {
+      background-color: $oc-pink-0;
+    }
+  }
+}
+
+.theme-wrapper.dark > div.fs-sa > aside > div.sticky {
+  ul.aside-main-menu li {
+    a svg {
+      color: $oc-pink-4;
+    }
+  }
+}
+
+ul.links li:hover:before {
+  background: $oc-pink-4;
+}
+
+blockquote.note {
+  background: lighten($oc-pink-0, 1.5);
+  border-color: $oc-pink-1;
+  svg.icon.note {
+    color: $oc-gray-0;
+    background: $oc-pink-5;
+  }
+}
+blockquote.fixme {
+  border: 1px $oc-cyan-6 dashed;
+  background: transparent;
+}
+blockquote.fixme:after {
+  background: $oc-cyan-6;
+}
+

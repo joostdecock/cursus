@@ -9,7 +9,7 @@ const Footer = (props) => {
       <Logo />
       </div>
       <p>Too cool for school</p>
-      <p>Informaticalessen voor volwassenen</p>
+      <p>Informaticalessen voor (leuke) volwassenen</p>
     </footer>
   )
 }

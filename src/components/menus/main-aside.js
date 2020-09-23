@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import ComputerIcon from '@material-ui/icons/Devices'
+import IntroIcon from '@material-ui/icons/LocalCafe'
+import Icon from '../icons'
 
 const links = {
-  computers: 'Computers',
-}
-const icons = {
-  computers: <ComputerIcon />,
+  intro: ['Introductie', <IntroIcon />],
+  computers: ['Computers', <ComputerIcon />],
+  besturingssystemen: ['Besturingssystemen', <Icon icon='windows'/>],
 }
 
 const MainMenu = ({ app, active = '', iconsOnly = false }) => (
@@ -17,10 +18,10 @@ const MainMenu = ({ app, active = '', iconsOnly = false }) => (
           <Link
             to={`/${link}/`}
             className={link === active ? 'active' : ''}
-            title={links[link]}
+            title={links[link][0]}
           >
-            {icons[link]}
-            {!iconsOnly && <span className="text">{links[link]}</span>}
+            {links[link][1]}
+            {!iconsOnly && <span className="text">{links[link][0]}</span>}
           </Link>
         </li>
       )

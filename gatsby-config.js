@@ -15,7 +15,7 @@ const plugins = [
   {
     resolve: 'gatsby-source-filesystem',
     options: {
-      path: `${__dirname}/md`,
+      path: `${__dirname}/mdx`,
       name: 'markdown',
     }
   },

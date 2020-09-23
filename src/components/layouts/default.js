@@ -1,6 +1,8 @@
 import React from 'react'
 import BreadCrumbs from '../breadcrumbs'
 import MainAside from '../menus/main-aside'
+import MdxToc from '../mdx/toc'
+import './default.scss'
 
 const DefaultLayout = (props) => {
   return (
@@ -14,8 +16,13 @@ const DefaultLayout = (props) => {
       <section>
         <BreadCrumbs crumbs={props.app.crumbs} pageTitle={props.app.title} />
         <h1>{props.app.title}</h1>
-        {props.text && <div style={{ maxWidth: '80ch' }}>{props.children}</div>}
-        {!props.text && props.children}
+        {props.toc && (
+          <div className='text-toc-wrapper'>
+            <div className='text'>{props.children}</div>
+            <div className='toc'><MdxToc toc={props.toc} app={props.app} /></div>
+          </div>
+        )}
+        {!props.toc && props.children}
       </section>
     </div>
   )

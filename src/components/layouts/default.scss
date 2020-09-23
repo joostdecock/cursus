@@ -1,0 +1,69 @@
+@import '../../../node_modules/open-color/open-color.scss';
+div.text-toc-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  div.text {
+    max-width: 69ch;
+  }
+  div.toc {
+    position: sticky;
+    align-self: flex-start;
+    top: 0;
+    max-width: calc( 300px + 1rem);
+    min-width: calc( 200px + 1rem);
+    padding-left: 1rem;
+    ul {
+      font-family: 'Roboto condensed';
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      line-height: 1.25;
+      li a {
+        display: block;
+        margin:: 0 -0.5rem;
+        padding: 0.25rem 0.5rem;
+      }
+      li a:hover {
+        background: $oc-pink-0;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* slate */
+@media (max-width: 1199px) and (min-width: 960px) {
+  div.text-toc-wrapper div.toc {
+    max-width: calc( 200px + 1rem);
+    min-width: calc( 100px + 1rem);
+  }
+}
+
+/* tablet */
+@media (max-width: 959px) and (min-width: 600px) {
+  div.text-toc-wrapper {
+    flex-wrap: wrap-reverse;
+    div.toc {
+      position: relative;
+      padding: 0;
+      margin: 0 0;
+      border: 1px solid $oc-pink-1;
+      border-radius: 4px;
+      margin-top: -1rem;
+      ul {
+        padding: 0.5rem;
+      }
+      h5 {
+        margin: 0;
+        padding: 0 0.5rem;
+        background: $oc-pink-1;
+      }
+    }
+  }
+}
+
+/* mobile */
+@media (max-width: 599px) {
+}
+

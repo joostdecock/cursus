@@ -8,7 +8,6 @@ function useApp() {
 
   // Persistent state
   const [theme, setTheme] = useLocalStorage('theme', 'light')
-  const [notification, setNotification] = useLocalStorage('notification')
 
   // React State
   const [crumbs, setCrumbs] = useState([])
@@ -38,10 +37,6 @@ function useApp() {
   const mobile = useMediaQuery('(max-width:599px)')
   const tablet = useMediaQuery('(min-width: 600px) and (max-width: 959px)')
   const slate = useMediaQuery('(min-width: 960px) and (max-width: 1199px)')
-
-  // These are used in other methods
-  let core = {
-  }
 
   return {
     // Helper methods
