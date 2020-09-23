@@ -1,5 +1,5 @@
 ---
-title: Besturingssystemen
+title: Besturings&shy;systemen
 order: 10
 ---
 

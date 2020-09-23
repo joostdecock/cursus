@@ -16,3 +16,11 @@
     line-height: 1;
   }
 }
+
+/* tablet */
+@media (max-width: 959px) {
+  #homepage div.hero {
+    font-size: 10ch;
+  }
+}
+

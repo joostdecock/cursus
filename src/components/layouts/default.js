@@ -15,7 +15,7 @@ const DefaultLayout = (props) => {
       </aside>
       <section>
         <BreadCrumbs crumbs={props.app.crumbs} pageTitle={props.app.title} />
-        <h1>{props.app.title}</h1>
+        <h1 dangerouslySetInnerHTML={{__html: props.app.title}}/>
         {props.toc && (
           <div className='text-toc-wrapper'>
             <div className='text'>{props.children}</div>

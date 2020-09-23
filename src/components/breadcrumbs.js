@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Breadcrumbs = ({ pageTitle, suffix, crumbs = [] }) => {
+const Breadcrumbs = ({ pageTitle, crumbs = [] }) => {
   const renderCrumb = (crumb) => {
     return (
       <li key={crumb.slug}>
-        <Link to={crumb.slug}>{crumb.title}</Link>
+        <Link to={crumb.slug} dangerouslySetInnerHTML={{ __html: crumb.title}}/>
       </li>
     )
   }
@@ -18,10 +18,7 @@ const Breadcrumbs = ({ pageTitle, suffix, crumbs = [] }) => {
           </Link>
         </li>
         {crumbs.map((crumb) => renderCrumb(crumb))}
-        <li>
-          {pageTitle}
-          {suffix ? suffix : null}
-        </li>
+        <li dangerouslySetInnerHTML={{ __html: pageTitle}}/>
       </ul>
     </nav>
   )
