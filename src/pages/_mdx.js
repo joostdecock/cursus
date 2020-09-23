@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import useApp from '../hooks/useApp'
-import useNavigation from '../hooks/useNavigation'
+//import useNavigation from '../hooks/useNavigation'
 import AppWrapper from '../components/app/wrapper'
 import Layout from '../components/layouts/default'
 import Mdx from '../components/mdx'
@@ -10,7 +10,7 @@ import { graphql } from 'gatsby'
 const HomePage = (props) => {
   // Hooks
   const app = useApp()
-  const nav = useNavigation()
+  //const nav = useNavigation()
 
   const node = props.data.allMdx.edges[0].node
   const title = node.frontmatter.title || false
@@ -19,10 +19,7 @@ const HomePage = (props) => {
   useEffect(() => {
     app.setTitle(title)
     app.setDescription(node.excerpt)
-    //app.setCrumbs(crumbsFromNavigation(props.path, tree, titles))
   }, [props.pageContext.file])
-
-  const active = node.parent.relativeDirectory.split('/').shift()
 
   return (
     <AppWrapper app={app}>
