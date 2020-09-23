@@ -15,9 +15,6 @@ const HomePage = (props) => {
       <Layout app={app}>
         <div id='homepage'>
           <h1>Too cool for school</h1>
-          <div className='hero'>
-            2c4s
-          </div>
           <p>Informaticalessen voor (leuke) volwassenen</p>
         </div>
       </Layout>

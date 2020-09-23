@@ -1,19 +1,16 @@
 #homepage {
   text-align: center;
+  font-family: 'Raleway';
   h1 {
     margin-top: 3rem;
-  }
-  div.hero {
-    max-width: 480px;
-    margin: 0 auto;
-    color: #f783ac;
     background: -webkit-linear-gradient(45deg, #f783ac, #3bc9db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'Raleway';
     font-weight: 900;
-    font-size: 16ch;
+    font-size: 8vw;
     line-height: 1;
+    max-width: 900px;
+    margin: auto;
   }
 }
 
