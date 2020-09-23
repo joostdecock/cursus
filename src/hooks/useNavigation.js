@@ -7,7 +7,7 @@ function useNavigation() {
   const query = useStaticQuery(graphql`
     {
       mdx: allMdx(
-        filter: { fileAbsolutePath: { regex: "//cursus/mdx/[^.]*/*.md/" } }
+        filter: { fileAbsolutePath: { regex: "//mdx/[^.]*/*.md/" } }
         sort: { fields: fileAbsolutePath, order: ASC }
       ) {
         edges {
@@ -25,7 +25,7 @@ function useNavigation() {
 
   // Gets the web URL slug from file path
   const slugFromFilePath = (filePath) => {
-    let slug = '/' + filePath.match(/[\/|\\]cursus[\/|\\]mdx[\/|\\](.*)/).pop()
+    let slug = '/' + filePath.match(/[\/|\\]mdx[\/|\\](.*)/).pop()
 
     if (slug.slice(-10) === '/README.md') return [slug, slug.slice(0, -9)]
     else return [slug, slug.slice(0, -3)]

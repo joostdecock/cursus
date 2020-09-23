@@ -1,7 +1,7 @@
 const path = require('path')
 
 const slugFromFilePath = (filePath) => {
-  let slug = '/' + filePath.match(/[\/|\\]cursus[\/|\\]mdx[\/|\\](.*)/).pop()
+  let slug = '/' + filePath.match(/[\/|\\]mdx[\/|\\](.*)/).pop()
 
   if (slug.slice(-10) === '/README.md') return slug.slice(0, -9)
   else return slug.slice(0, -3)
@@ -11,7 +11,7 @@ const createMdxPages = async function (createPage, graphql) {
   let promises = []
   const query = `{
     allMdx(
-      filter: { fileAbsolutePath: { regex: "//cursus/mdx/[^.]*/*.md/" } }
+      filter: { fileAbsolutePath: { regex: "//mdx/[^.]*/*.md/" } }
       sort: { fields: [fileAbsolutePath], order: DESC }
     ) { edges { node { fileAbsolutePath } } }
   }`
