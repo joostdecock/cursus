@@ -45,7 +45,7 @@ export const pageQuery = graphql`
           parent { ... on File { relativeDirectory } }
           body
           excerpt
-          tableOfContents(maxDepth: 3)
+          tableOfContents(maxDepth: 4)
           frontmatter {
             title
             order

@@ -17,6 +17,10 @@ en al het cursusmateriaal is daar een mooi voorbeeld van.
 Dus heb ik beslist om mijn eigen cursus te schrijven.
 De cursus is online beschikbaar op https://cursus.decock.org/ 
 
+De broncode van de cursus -- en deze website -- is beschikbaar
+via https://github.com/joostdecock/cursus
+
+
 ## Woorden en termen
 
 Een woord dat cursief is gedrukt -- met een klein vraagtekentje erboven --
@@ -43,7 +47,3 @@ Dit is een waarschuwing. Zorg zeker dat je de waarschuwingen goed leest.
 Dit geeft aan dat een onderdeel van de cursus nog in aanbouw is
 </Fixme>
 
-## Broncode
-
-De broncode van deze cursus -- en deze website -- is beschikbaar
-via https://github.com/joostdecock/cursus
