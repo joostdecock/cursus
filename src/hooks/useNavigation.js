@@ -99,12 +99,15 @@ function useNavigation() {
 
     const index = chunks.shift()
     if (chunks.length === 0) {
-      let children = {}
+      // Respect the order for children
+      let ids = {}
+      let sorted = []
       for (let id in tree[index].children) {
         let child = tree[index].children[id]
-        children[child.slug] = child
+        ids[child.order] = child
       }
-      return children
+      for (let i of Object.keys(ids).sort()) sorted.push(ids[i])
+      return sorted
     }
     return getFromTree(tree[index].children, chunks)
   }

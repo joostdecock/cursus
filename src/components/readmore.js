@@ -8,12 +8,11 @@ const ReadMore = ({ slug, box = true }) => {
 
   const pageList = slug => (
     <ul className={box ? 'links' : ''}>
-      {Object.keys(app.pages[slug].children).map(path => (
-        <li key={path}><Link to={path}>{app.pages[path].title}</Link></li>
+      {app.pages[slug].children.map(page => (
+        <li key={page.slug}><Link to={page.slug}>{page.title}</Link></li>
       ))}
     </ul>
   )
-
   if (box)
     return (
       <Blockquote type="note">

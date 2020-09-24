@@ -13,6 +13,8 @@ const jargon = {
   moederbord: '',
   ssd: '',
   ram: '',
+  input: '',
+  output: '',
 
 
 }
