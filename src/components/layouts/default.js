@@ -1,5 +1,6 @@
 import React from 'react'
-import BreadCrumbs from '../navcrumbs'
+import NavCrumbs from '../navcrumbs'
+import BreadCrumbs from '../breadcrumbs'
 import MainAside from '../menus/main-aside'
 import MdxToc from '../mdx/toc'
 import './default.scss'
@@ -16,7 +17,11 @@ const DefaultLayout = (props) => {
         </div>
       </aside>
       <section>
-        <BreadCrumbs slug={props.slug} app={props.app} />
+
+  {props.slug
+    ? <NavCrumbs slug={props.slug} app={props.app} />
+    : <BreadCrumbs pageTitle={props.title} app={props.app} />
+  }
         <h1 dangerouslySetInnerHTML={{__html: props.app.title}}/>
         {props.toc && (
           <div className='text-toc-wrapper'>

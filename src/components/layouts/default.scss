@@ -81,6 +81,29 @@ img.gatsby-resp-image-image {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
 }
 
+blockquote.goals {
+  background: $oc-green-0;
+  border: 1px dashed $oc-green-5;
+  svg { display: none; }
+}
+blockquote.goals:after {
+  font-family: 'Roboto condensed';
+  content: 'Doelstellingen';
+  display: block;
+  position: absolute;
+  bottom: -25px;
+  left: 20px;
+  color: #fff;
+  background: $oc-green-6;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 16px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-weight: 700;
+  text-shadow: none;
+}
+
 /* slate */
 @media (max-width: 1199px) and (min-width: 960px) {
   div.text-toc-wrapper div.toc {

@@ -3,6 +3,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
 import Blockquote from '@freesewing/components/Blockquote'
+import Goals from './goals'
 import ReadMore from '../readmore'
 import YouTube from '../youtube'
 
@@ -12,6 +13,7 @@ const customComponents = {
   Warning: ({ children }) => <Blockquote type="warning">{children}</Blockquote>,
   Fixme: ({ children }) => <Blockquote type="fixme">{children}</Blockquote>,
   YouTube,
+  Goals
 }
 
 const Mdx = ({ node, slug }) => (
