@@ -28,7 +28,9 @@ const plugins = [
         {
           resolve: 'gatsby-remark-images',
           options: {
-            maxWidth: 756
+            maxWidth: 800,
+            showCaptions: ['title', 'alt'],
+            markdownCaptions: true,
           }
         }
       ],
@@ -36,7 +38,9 @@ const plugins = [
         {
           resolve: 'gatsby-remark-images',
           options: {
-            maxWidth: 756
+            maxWidth: 800,
+            showCaptions: ['title', 'alt'],
+            markdownCaptions: true,
           }
         },
         {

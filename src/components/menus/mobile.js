@@ -1,8 +1,9 @@
 import React from 'react'
 import MainAside from './main-aside'
 import NavbarIcons from '../app/navbar-icons'
+import ReadMore from '../readmore'
 
-const MobileMenu = ({ app, context }) => {
+const MobileMenu = ({app}) => {
 
   return (
     <div className='mob-menu'>
@@ -10,7 +11,8 @@ const MobileMenu = ({ app, context }) => {
         toggleDarkMode={app.toggleDarkMode}
         theme={app.theme}
       />
-      <MainAside app={app} context={context} />
+      <MainAside app={app} />
+      {app.context}
     </div>
   )
 }

@@ -17,7 +17,7 @@ const MainMenu = ({ app, active = '', iconsOnly = false }) => (
         <li key={link}>
           <Link
             to={`/${link}/`}
-            className={link === active ? 'active' : ''}
+            className={link === app.active ? 'active' : ''}
             title={links[link][0]}
           >
             {links[link][1]}

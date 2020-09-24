@@ -18,7 +18,6 @@ const renderLevel = (items, level=0) => {
 }
 
 const MdxToc = ({ toc, app }) => {
-  console.log(toc)
   if (!toc.items) return null
   else
     return (

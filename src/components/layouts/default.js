@@ -1,20 +1,22 @@
 import React from 'react'
-import BreadCrumbs from '../breadcrumbs'
+import BreadCrumbs from '../navcrumbs'
 import MainAside from '../menus/main-aside'
 import MdxToc from '../mdx/toc'
 import './default.scss'
+import ReadMore from '../readmore'
 
 const DefaultLayout = (props) => {
+
   return (
     <div className="fs-sa" dataLayout="docs">
       <aside>
         <div className="sticky">
-          <MainAside app={props.app} active={props.active} />
-          <div className="aside-context">{props.context || null}</div>
+          <MainAside app={props.app} />
+          <div className="aside-context">{props.app.context}</div>
         </div>
       </aside>
       <section>
-        <BreadCrumbs crumbs={props.app.crumbs} pageTitle={props.app.title} />
+        <BreadCrumbs slug={props.slug} app={props.app} />
         <h1 dangerouslySetInnerHTML={{__html: props.app.title}}/>
         {props.toc && (
           <div className='text-toc-wrapper'>

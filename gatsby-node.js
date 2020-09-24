@@ -27,7 +27,8 @@ const createMdxPages = async function (createPage, graphql) {
               component: path.resolve(`./src/pages/_mdx.js`),
               context: {
                 file: page.node.fileAbsolutePath,
-                page: page.node
+                page: page.node,
+                slug
               }
             })
             resolve(true)

@@ -10,11 +10,18 @@ const jargon = {
   bitcoin: 'De bekendste cryptocurrency, in 2008 uitgevonden door de raadselachtige Satoshi Nakamoto',
   cryptocurrency: 'Een digitaal alternatief voor (door staten uitegeven) munten. Typisch gedecentraliseerd en gebaseerd op blockchain technologie',
   blockchain: 'Een lijst van records, gelinkt doordat elk blok de cryptografische hash van het voorgaande blok bevat',
+  moederbord: '',
+  ssd: '',
+  ram: '',
+
+
 }
 
 jargon['zwarte doos'] = 'Beeldspraak om uit te drukken dat de interne werking van een systeem niet gekend is of hoeft te zijn. We beschouwen alleen de inputs en outputs'
 jargon['neurale netwerken'] = 'Een manier om data te verwerken die vaak synoniem staat met artificiele intelligentie'
 jargon['volatiel geheugen'] = 'Geheugen dat onder stroom moet staan om zijn informatie te behouden'
+jargon['harde schijf'] = ''
+jargon['floppy disk'] = ''
 
 module.exports = jargon
 

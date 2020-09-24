@@ -7,8 +7,8 @@ const BareLayout = (props) => {
     <div className="fs-sa" dataLayout="docs">
       <aside>
         <div className="sticky">
-          <MainAside app={props.app} active={props.active} />
-          <div className="aside-context">{props.context || null}</div>
+          <MainAside app={props.app} />
+          <div className="aside-context">{props.app.context || null}</div>
         </div>
       </aside>
       <section>{props.children}</section>

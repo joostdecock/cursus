@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import useNavigation from './useNavigation'
+import useLocalStorage from './useLocalStorage'
 import { navigate as gatsbyNavigate } from 'gatsby'
 
-import useLocalStorage from './useLocalStorage'
 
 function useApp() {
 
@@ -10,7 +11,8 @@ function useApp() {
   const [theme, setTheme] = useLocalStorage('theme', 'light')
 
   // React State
-  const [crumbs, setCrumbs] = useState([])
+  const [active, setActive] = useState('')
+  const [context, setContext] = useState([])
   const [description, setDescription] = useState('Informatica voor volwassenen')
   const [image, setImage] = useState(`https://freesewing.org/share/language.wide.jpg`)
   const [loading, setLoading] = useState(false)
@@ -48,8 +50,10 @@ function useApp() {
     // React state
     loading,
     setLoading,
-    crumbs,
-    setCrumbs,
+    context,
+    setContext,
+    active,
+    setActive,
     description,
     setDescription,
     image,
@@ -68,6 +72,8 @@ function useApp() {
     mobile,
     tablet,
     slate,
+    // Navigation
+    pages: useNavigation()
   }
 }
 

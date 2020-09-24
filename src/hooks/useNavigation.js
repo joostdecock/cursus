@@ -31,18 +31,6 @@ function useNavigation() {
     else return [slug, slug.slice(0, -3)]
   }
 
-  // Gets the web URL slug fro part of a path
-  const slugFor = function (a, b, c, d, e) {
-    let chunks = []
-    if (a) chunks.push(a)
-    if (b) chunks.push(b)
-    if (c) chunks.push(c)
-    if (d) chunks.push(d)
-    if (e) chunks.push(e)
-
-    return '/' + chunks.join('/') + '/'
-  }
-
   const getPages = edges => {
     const pages = {}
     for (let edge of edges) {
@@ -51,58 +39,90 @@ function useNavigation() {
         slug,
         file,
         title: edge.node.frontmatter.title,
-        order: (edge.node.frontmatter.order || '') + edge.node.frontmatter.title
+        order: (edge.node.frontmatter.order || '')
+          + edge.node.frontmatter.title
+          + slug
       }
     }
 
     return pages
   }
 
+  const parentSlug = slug => '/' + slugChunks(slug).pop().join('.') + '/'
+
+
   const getTree = (pages) => {
-    const tree = {
-      '/docs/about/': {
-        title: 'docs',
-        children: {}
+    let tree = {}
+    for (let slug of Object.keys(pages).sort()) {
+      addToTree(slug, pages[slug], tree)
+    }
+
+    return tree
+  }
+
+  const slugChunks = slug => {
+    const chunks = []
+    for (const chunk of slug.split('/')) {
+      if (chunk.length > 0) chunks.push(chunk)
+    }
+
+    return chunks
+  }
+
+  const decorateTree = (tree, chunks, slug, page) => {
+    let index
+    if (chunks.length === 0) return tree
+    else {
+      index = chunks.shift()
+      if (chunks.length === 0) {
+        tree[index] = {
+          order: page.order,
+          title: page.title,
+          slug
+        }
+      }
+      else {
+        if (typeof tree[index] === 'undefined') tree[index] = { children: {} }
+        else if (typeof tree[index].children === 'undefined') tree[index].children = {}
       }
     }
 
-    // Add documentation from MDX pages
-    // Better make sure they are in order
-    for (let slug of Object.keys(pages.docs).sort()) {
-      addToTree(slug, pages.docs[slug], tree)
-    }
-
-    return tree['/docs/'].children
+    return decorateTree(tree[index].children, chunks, slug, page)
   }
 
   const addToTree = function (slug, page, tree) {
-    let [a, b, c, d, e] = slug.slice(1, -1).split('/')
-    let target
-    if (e) {
-      target =
-        tree[slugFor(a)].children[slugFor(a, b)].children[slugFor(a, b, c)].children[
-          slugFor(a, b, c, d)
-        ].children
-    } else if (d)
-      target = tree[slugFor(a)].children[slugFor(a, b)].children[slugFor(a, b, c)].children
-    else if (c) target = tree[slugFor(a)].children[slugFor(a, b)].children
-    else if (b) target = tree[slugFor(a)].children
-    else if (a) target = tree
-    target[slugFor(a, b, c, d, e)] = { title: 'fixme', children: {} }
-
-    return
+    decorateTree(tree, slugChunks(slug), slug, page)
   }
 
+  const getFromTree = (tree, chunks) => {
+    if (chunks.length === 0) return null
+
+    const index = chunks.shift()
+    if (chunks.length === 0) {
+      let children = {}
+      for (let id in tree[index].children) {
+        let child = tree[index].children[id]
+        children[child.slug] = child
+      }
+      return children
+    }
+    return getFromTree(tree[index].children, chunks)
+  }
+
+  const getChildren = (slug, tree) => {
+    return getFromTree(tree, slugChunks(slug))
+  }
 
   const pages = getPages(query.mdx.edges)
-  console.log({pages})
-  //const tree = getTree(pages)
+  const tree = getTree(pages)
 
-  //const getTitle = (slug) => titles[slug]
 
-  return {
-    pages,
+  // Now add children
+  for (const slug of Object.keys(pages)) {
+    pages[slug].children = getChildren(slug, tree)
   }
+
+  return pages
 }
 
 export default useNavigation
