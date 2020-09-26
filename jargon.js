@@ -15,6 +15,7 @@ const jargon = {
   ram: 'Random Access Memory',
   input: 'Invoer, of wat in een programma of computer gaat',
   output: 'Uitvoer, of wat uit een programma of computer komt',
+  cores: 'Een multi-core processor heeft meerdere cores die elk zelfstandig operaties kunnen uitvoeren. Cores zijn als verschillende mini-processoren in dezelfde processor chip'
 
 
 }

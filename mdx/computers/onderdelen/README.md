@@ -30,6 +30,17 @@ meestal gebruikt worden:
 
 </Note>
 
+<Tip>
+
+##### Multi-core processoren
+
+Moderne processoren hebben vaak meerdere _cores_. 
+Elk van die cores is een eigen mini-processor die zelfstandig berekeningen en operaties kan 
+uitvoeren. Een computer met een multi-core processort heeft dus in zekere zin meerdere 
+processoren (die allemaal in dezelfde processor-chip zitten).
+
+</Tip>
+
 ### De GPU
 
 ![Een Nvidia Volta GPU](gpu.jpg)
