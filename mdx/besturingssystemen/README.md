@@ -13,24 +13,40 @@ dat instaat voor een aantal primaire taken:
 
 ## Historiek
 
-De allereerst computers (letterlijk _rekenaars_) waren relatief eenvoudige machines
-die een taak konder uitvoeren. En dan nog een, en dan nog een.
+De allereerst computers (letterlijk _rekenaars_) konden een taak uitvoeren. 
+En dan nog een, en dan nog een.
 
-Een computer kon maar 1 ding tegelijkertijd, en als een gebruiker de computer
-gebruikte, dan kon niemand anders er gebruik van maken.
+Die eerste computers ware reusachtige machines -- een zogenaamde
+_mainframe_ -- en kon slechts 1 ding tegelijkertijd.
+Als een gebruiker de computer gebruikte, dan kon niemand anders er gebruik van maken.
 
-Dat was niet erg handig, en dus werd de _mainframe_ uitgevonden. 
-Een reusachtige computer die heel wat meer mogelijkheden had,
-zoals het tegelijk uitvoeren van verschillende programma's
-voor vershillende gebruikers.
+Dat was niet erg handig, wat beter zou zijn is als de computer
+tegelijk verschillende programma's voor vershillende gebruikers kon uitvoeren.
 
-Die extra complexiteit maakt dat de computer niet zomaar het programma
-van de gebruiker kon uitvoeren. Er was een soort van *basis programma*
-nodig dat het jongleren van verschillende taken voor zijn rekening nam.
+Die extra complexiteit vereiste een soort van *basis programma* dat
+het jongleren van verschillende taken voor zijn rekening nam.
+Zo'n programma is een besturingssysteem. 
 
-Zo'n programma is een besturingssysteem. En degenen die je vandaag kent
--- zoals Micorsoft Windows, MacOS of Linux -- komen allemaal van dezelfde
-mainframe root.
+Besturingssystemen werden eerst gemaakt voor mainframes, maar 
+historisch is het belangrijkste besturingssysteem wellicht Unix.
+Ontwikkeld in the jaren 70 door onderzoekers aan het AT&T Bell lab
+is het de betovergrootmoeder van:
+
+ - Commerciele Unix versies zoals Solaris (Sun), HP-UX (HP), en AIX (IBM)
+ - Vrije Unix versies zoals OpenBsd, NetBsd, FreeBsd, en DragonflyBsd
+ - MacOs
+ - Linux
+
+Het besturingssysteem dat jij misschien best kent, Microsoft Windows, ontbreekt
+op dat lijstje. Windows is best een rare vogel onder besturingssystemen, maar
+wel het populairste op desktop computers.
+
+Over het algemeen zijn de (verre) unix varianten absoluut koning, en in het bijzonder
+Linux. Dat komt enerzijds omdat Android gebaseerd is op Linux, en er zijn meer dan
+2.5 miljard Android toestellen. Maar ook omdat Linux veruit het meest populaire
+besturingssysteem is voor _servers_, de werkpaarden onder de computers.
+De top-500 lijst van supercomputers -- een lijst van de krachtigste
+computers ter wereld -- is een 100% Linux club.
 
 ## Beheer van middelen
 
@@ -72,3 +88,5 @@ Het inplannen van taken, het bijhouden van de tijd, het registreren van de huidi
 
 Door middle van zogenaamde _drivers_ maakt het OS te vertaalslag van instructies
 in programmas naar commando's die de hardware kan begrijpen.
+
+<ReadMore />
