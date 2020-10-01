@@ -1,5 +1,6 @@
 ---
 title: 'De kernel: Het hart van het OS'
+order: 10
 ---
 
 <Tip>
@@ -153,4 +154,5 @@ kernel en de hardware.
 De driver vormt een abstractie. De kernel heeft maar 1 manier om te zeggen 
 _muziek wat luiden aub_, en de driver zorgt er dan voor dat dat werkt met de 
 geluidskaart die in de computer zit.
+
 
