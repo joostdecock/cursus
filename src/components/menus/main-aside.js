@@ -3,11 +3,13 @@ import { Link } from 'gatsby'
 import ComputerIcon from '@material-ui/icons/Devices'
 import IntroIcon from '@material-ui/icons/LocalCafe'
 import Icon from '../icons'
+import CarIcon from '@material-ui/icons/DriveEta'
 
 const links = {
   intro: ['Introductie', <IntroIcon />],
   computers: ['Computers', <ComputerIcon />],
-  besturingssystemen: ['Besturingssystemen', <Icon icon='windows'/>],
+  besturingssystemen: ['Besturingssystemen', <CarIcon />],
+  windows: ['Windows', <Icon icon='windows'/>],
 }
 
 const MainMenu = ({ app, active = '', iconsOnly = false }) => (

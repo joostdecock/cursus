@@ -3,6 +3,18 @@ title: Besturings&shy;systemen
 order: 10
 ---
 
+<Goals>
+
+ - De rol van het besturingssysteem toelichten
+ - Uitleggen wat de kernel is
+ - De voornaamste taken van de kernel begrijpen
+ - Uitleggen wat virtueel geheugen is
+ - De gebruiksinterface of UI van de bekendste besturingssystemen herkennen
+
+</Goals>
+
+
+
 Een besturingssysteem -- of operating system of _OS_ -- is systeem software
 dat instaat voor een aantal primaire taken: 
 
