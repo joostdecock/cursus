@@ -4,12 +4,15 @@ import ComputerIcon from '@material-ui/icons/Devices'
 import IntroIcon from '@material-ui/icons/LocalCafe'
 import Icon from '../icons'
 import CarIcon from '@material-ui/icons/DriveEta'
+import MediaIcon from '@material-ui/icons/Panorama'
 
 const links = {
   intro: ['Introductie', <IntroIcon />],
   computers: ['Computers', <ComputerIcon />],
   besturingssystemen: ['Besturingssystemen', <CarIcon />],
   windows: ['Windows', <Icon icon='windows'/>],
+  mac: ['MacOS & Linux', <Icon icon='apple'/>],
+  media: ['Media', <MediaIcon />],
 }
 
 const MainMenu = ({ app, active = '', iconsOnly = false }) => (

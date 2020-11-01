@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-mdx-basic",
-  "description": "Gatsby starter MDX basic",
+  "name": "cursus",
+  "description": "Informaticalessen voor volwassenen",
   "version": "1.0.0",
-  "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+  "author": "Joost De Cock <joost@decock.org>",
   "dependencies": {
     "@freesewing/components": "^2.8.1",
     "@freesewing/css-theme": "^2.9.0-rc.5",

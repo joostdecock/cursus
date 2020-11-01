@@ -3,7 +3,7 @@ import useApp from '../hooks/useApp'
 import { Link } from 'gatsby'
 import Blockquote from '@freesewing/components/Blockquote'
 
-const ReadMore = ({ slug, box = true }) => {
+const ReadMore = ({ slug, box = true, title=false }) => {
   const app = useApp()
 
   const pageList = slug => (
@@ -16,7 +16,7 @@ const ReadMore = ({ slug, box = true }) => {
   if (box)
     return (
       <Blockquote type="note">
-        <h5>Meer lesmateriaal</h5>
+        <h5>{title || 'Meer lesmateriaal'}</h5>
         {pageList(slug)}
       </Blockquote>
     )
