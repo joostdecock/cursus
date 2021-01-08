@@ -1,7 +1,6 @@
 import React from 'react'
 import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
-import Layout from '../components/layouts/bare'
 
 // Style
 import './homepage.scss'
@@ -11,13 +10,12 @@ const HomePage = (props) => {
   const app = useApp()
 
   return (
-    <AppWrapper app={app}>
-      <Layout app={app}>
+    <AppWrapper app={app} noCrumbs>
         <div id='homepage'>
+          <div className='nerd'>🤓</div>
           <h1>Too cool for school</h1>
           <p>Informaticalessen voor (leuke) volwassenen</p>
         </div>
-      </Layout>
     </AppWrapper>
   )
 }

@@ -1,36 +1,26 @@
 import React from 'react'
-import NavCrumbs from '../navcrumbs'
 import BreadCrumbs from '../breadcrumbs'
-import MainAside from '../menus/main-aside'
-import MdxToc from '../mdx/toc'
+import PrevNext from '../prev-next'
 import './default.scss'
-import ReadMore from '../readmore'
 
 const DefaultLayout = (props) => {
-
   return (
-    <div className="fs-sa" dataLayout="docs">
-      <aside>
-        <div className="sticky">
-          <MainAside app={props.app} />
-          <div className="aside-context">{props.app.context}</div>
-        </div>
-      </aside>
-      <section>
-
-  {props.slug
-    ? <NavCrumbs slug={props.slug} app={props.app} />
-    : <BreadCrumbs pageTitle={props.title} app={props.app} />
-  }
-        <h1 dangerouslySetInnerHTML={{__html: props.app.title}}/>
-        {props.toc && (
-          <div className='text-toc-wrapper'>
-            <div className='text'>{props.children}</div>
-            <div className='toc'><MdxToc toc={props.toc} app={props.app} /></div>
+    <div className="layout-wrapper">
+      <div className="layout" dataLayout="docs">
+        <aside>
+          <div className="sticky">
+            {props.mainMenu}
           </div>
-        )}
-        {!props.toc && props.children}
-      </section>
+        </aside>
+        <section>
+          {!props.noCrumbs && <BreadCrumbs crumbs={props.crumbs} pageTitle={props.title} />}
+          {!props.noTitle && <h1>{props.title}</h1>}
+          <div className={`content ${props.wide ? 'wide' : ''}`}>
+            {props.children}
+            <PrevNext prev={props.prev} next={props.next} />
+          </div>
+        </section>
+      </div>
     </div>
   )
 }

@@ -1,11 +1,10 @@
 import React from 'react'
-import Blockquote from '@freesewing/components/Blockquote'
 
-const Goals = ({children}) => (
-  <Blockquote type='goals'>
+const Goals = ({children=null}) => (
+  <blockquote className='goals'>
     <h5>Op het einde van dit onderdeel kan je:</h5>
     {children}
-  </Blockquote>
+  </blockquote>
 )
 
 export default Goals

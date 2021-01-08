@@ -40,7 +40,6 @@ const plugins = [
           options: {
             maxWidth: 800,
             showCaptions: ['title', 'alt'],
-            markdownCaptions: true,
           }
         },
         {

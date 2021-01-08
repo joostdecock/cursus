@@ -1,23 +1,11 @@
 #homepage {
   text-align: center;
-  font-family: 'Raleway';
+  div.nerd {
+    font-size: 66px;
+  }
   h1 {
     margin-top: 3rem;
-    background: -webkit-linear-gradient(45deg, #f783ac, #3bc9db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    font-size: 8vw;
-    line-height: 1;
-    max-width: 900px;
     margin: auto;
-  }
-}
-
-/* tablet */
-@media (max-width: 959px) {
-  #homepage div.hero {
-    font-size: 10ch;
   }
 }
 

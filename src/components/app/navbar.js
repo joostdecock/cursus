@@ -1,10 +1,14 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-
+import Button from '@material-ui/core/Button'
 import { Link } from 'gatsby'
 import NavbarIcons from './navbar-icons'
-import Logo from '../logo'
+import Icon from '@freesewing/components/Icon'
+// FIXME: The 'Campaign' icon is not (yet) available in material-ui
+import UpdatesIcon from '../UpdatesIcon'
+import JargonIcon from '@material-ui/icons/MenuBook'
+
 
 export default function ButtonAppBar(props) {
   // Don't show on mobile
@@ -21,23 +25,19 @@ export default function ButtonAppBar(props) {
       width: '100%',
       margin: 0,
       padding: 0,
-      background: props.app.theme === 'dark' ? colors.light : colors.dark,
-      zIndex: 15
+      zIndex: 15,
+      background: '#1a1d21'
     },
     logo: {
+      fontSize: '42px',
       textDecoration: 'none',
-      height: '19.38px',
-      width: '69px',
-      padding: '11px',
-      display: 'inline-block',
-      color: colors[props.app.theme]
     },
     button: {
       height: '64px',
       padding: '0 18px'
     },
     iconButton: {
-      color: colors[props.app.theme]
+      color: colors.dark
     },
     icon: {
       maxWidth: '24px',
@@ -53,28 +53,34 @@ export default function ButtonAppBar(props) {
     }
   }
 
-  const buttonProps = {
-    color: 'primary',
-    size: 'large',
-    style: style.button
+  const iconStyle = {
+    marginRight: '0.5rem',
+    color: '#b197fc'
   }
-  buttonProps['aria-haspopup'] = 'true'
 
   return (
     <div style={style.wrapper}>
-      <AppBar position="static" color="secondary" elevation={0}>
+      <AppBar position="static" color='transparent' elevation={0}>
         <Toolbar disableGutters={true}>
-          <Link to="/" style={style.logo}>
-            <Logo />
+          <Link to="/" style={style.logo} title='Start'>
+            🤓
           </Link>
+
+          <Button href="/nieuws/" style={style.iconButton}>
+            <UpdatesIcon style={iconStyle} size={28}/>
+            Nieuws & Updates
+          </Button>
 
           <span style={style.spacer} />
 
+          <Button href="/jargon/" style={style.iconButton} >
+            <JargonIcon style={{ ...iconStyle }} />
+            Verklarende woordenlijst
+          </Button>
+
           <NavbarIcons
-            translate={props.app.translate}
             toggleDarkMode={props.app.toggleDarkMode}
             theme={props.app.theme}
-            language={props.app.language}
           />
         </Toolbar>
       </AppBar>

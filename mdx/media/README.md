@@ -24,6 +24,6 @@ order: 10
 
 Deze media les bestaat uit drie onderdelen:
 
-<ReadMore box={false} />
+<ReadMore list />
 
 

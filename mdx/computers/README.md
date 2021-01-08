@@ -27,10 +27,4 @@ De informatie die we aan de computer geven om mee aan de slag te gaan
 noemen we de invoer of _input_. Het resultaat van de berekeningen van de
 computer noemen we de uitvoer of _output_.
 
-
 <ReadMore />
-
-
-<Fixme>
-Dit deel van de cursus is nog in aanbouw.
-</Fixme>

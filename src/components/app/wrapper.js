@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { MuiThemeProvider } from '@material-ui/core'
 import { createMuiTheme } from '@material-ui/core'
-import * as themes from '../../themes'
+import * as themes from '@freesewing/mui-theme'
 import Navbar from './navbar'
 import Footer from './footer'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -9,18 +9,21 @@ import UpIcon from '@material-ui/icons/KeyboardArrowUp'
 import CloseIcon from '@material-ui/icons/Close'
 import Fab from '@material-ui/core/Fab'
 import '@freesewing/css-theme'
-import 'typeface-roboto-condensed'
+import '@fontsource/ubuntu'
+import '@fontsource/roboto-mono'
+import Meta from './meta'
 import MobileMenu from '../menus/mobile'
 import useScrolledDown from '../../hooks/useScrolledDown'
-import Meta from './meta'
-import './cursus.scss'
+import Layout from '../layouts/default'
+import MainMenu from '../menus/main'
 
 /* This component should wrap all page content */
-const AppWrapper = ({ app, children, context = null }) => {
+const AppWrapper = props => {
+
   const [scrolledDown, setScrolledDown] = useState(false)
 
   useEffect(() => {
-    app.setMounted(true)
+    props.app.setMounted(true)
   }, [])
 
   useScrolledDown((s) => setScrolledDown(s))
@@ -31,7 +34,7 @@ const AppWrapper = ({ app, children, context = null }) => {
 
   // Scroll to top style
   let sttBase = {
-    right: app.mobile ? 'calc(1.5rem + 64px)' : '1rem',
+    right: props.app.mobile ? 'calc(1.5rem + 64px)' : '1rem',
     transition: 'margin-bottom ease-in-out 0.1s'
   }
   const style = {
@@ -45,61 +48,62 @@ const AppWrapper = ({ app, children, context = null }) => {
     }
   }
 
-  let wrapperClasses = app.theme === 'light' ? 'theme-wrapper light' : 'theme-wrapper dark'
-  if (app.menu) wrapperClasses += ' show-menu'
-  if (app.tablet) wrapperClasses += ' tablet'
-  if (app.mobile) wrapperClasses += ' mobile'
-  if (!app.mobile && !app.tablet) wrapperClasses += ' desktop'
+  let wrapperClasses = props.app.theme === 'light' ? 'theme-wrapper light' : 'theme-wrapper dark'
+  if (props.app.menu) wrapperClasses += ' show-menu'
+  if (props.app.tablet) wrapperClasses += ' tablet'
+  if (props.app.mobile) wrapperClasses += ' mobile'
+  if (!props.app.mobile && !props.app.tablet) wrapperClasses += ' desktop'
 
-  if (!app.mounted)
-    return (
-      <MuiThemeProvider theme={createMuiTheme(themes[app.theme])}>
-        <Meta app={app} />
-        <div className={wrapperClasses}>
-          {children}
-          <Footer language={process.env.GATSBY_LANGUAGE} app={app} />
-        </div>
-      </MuiThemeProvider>
-    )
+  const meta = {
+    title: props.title || false,
+    description: props.description || false,
+    image: props.image || false
+  }
+  const theme = createMuiTheme(themes[props.app.theme])
+  const mainMenu = <MainMenu app={props.app} slug={props.slug} />
 
   return (
-    <MuiThemeProvider theme={createMuiTheme(themes[app.theme])}>
-      <Meta app={app} />
-      <div className={wrapperClasses}>
-        {app.mobile ? (
-          <>
-            <Fab
-              title='Menu'
-              color="primary"
-              className="fab primary only-xs"
-              aria-label="Menu"
-              onClick={app.toggleMenu}
-            >
-              {app.menu ? <CloseIcon fontSize="inherit" /> : <MenuIcon fontSize="inherit" />}
-            </Fab>
-          </>
-        ) : (
-          <Navbar app={app} />
-        )}
-        <Fab
-          title='Scroll naar boven'
-          color="primary"
-          className="fab secondary"
-          arial-label="Scroll to top"
-          onClick={scrollToTop}
-          style={scrolledDown && !app.menu ? style.showStt : style.hideStt}
-        >
-          <UpIcon fontSize="inherit" />
-        </Fab>
-        {children}
-        {app.mobile && (
-          <div className="menu" onClick={app.closeNav}>
-            <MobileMenu app={app} context={context} />
-          </div>
-        )}
-        <Footer language={process.env.GATSBY_LANGUAGE} app={app} />
-      </div>
-    </MuiThemeProvider>
+      <MuiThemeProvider theme={theme}>
+        <Meta {...meta} />
+        <div className={wrapperClasses}>
+          {props.app.mobile ? (
+            <>
+              <Fab
+                title='Menu'
+                color="primary"
+                className="fab primary only-xs"
+                aria-label="Menu"
+                onClick={props.app.toggleMenu}
+              >
+                {props.app.menu ? (
+                  <CloseIcon fontSize="inherit" />
+                ) : (
+                  <MenuIcon fontSize="inherit" />
+                )}
+              </Fab>
+            </>
+          ) : (
+            !props.noNavbar && <Navbar app={props.app} />
+          )}
+          <Fab
+            title='Scroll to top'
+            color="primary"
+            className="fab secondary"
+            arial-label="Scroll to top"
+            onClick={scrollToTop}
+            style={scrolledDown && !props.app.menu ? style.showStt : style.hideStt}
+          >
+            <UpIcon fontSize="inherit" />
+          </Fab>
+          {props.noLayout ? props.children : <Layout {...props} mainMenu={mainMenu}>{props.children}</Layout>}
+          {props.app.mobile && (
+            <div className="menu" id="mobile-menu" onClick={props.app.closeNav}>
+              <MobileMenu app={props.app} mainMenu={mainMenu}/>
+            </div>
+          )}
+          <Footer language={process.env.GATSBY_LANGUAGE} app={props.app} />
+        </div>
+      </MuiThemeProvider>
   )
 }
 
