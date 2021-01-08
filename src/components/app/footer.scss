@@ -24,9 +24,6 @@ footer {
       padding: 0 2rem 0 0;
       width: 100%;
     }
-    div:last-of-type {
-      min-width: 250px;
-    }
   }
   ul {
     text-align: left;
@@ -64,14 +61,6 @@ footer {
     > div {
       width: calc(30% - 4rem);
       padding: 0 1rem;
-    }
-    > div:last-of-type {
-      min-width: calc(100% - 2rem);
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      div.logo {
-        margin: auto;
-      }
     }
   }
 }

@@ -11,8 +11,8 @@ const Page = props => {
   return (
     <AppWrapper
       app={app}
-      title='News & Updates'
-      description='Recent updates to our documentation'
+      title='Nieuws & Updates'
+      description='Recent nieuws en updates aan de lessen'
       text
     >
       <LatestNews app={app} />

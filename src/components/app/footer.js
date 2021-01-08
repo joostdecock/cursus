@@ -12,6 +12,14 @@ const Footer = (props) => {
         <div>
           <ul>
             <li className="heading">
+              Wie ben jij?
+            </li>
+            <li>Ik ben <a href="https://github.com/joostdecock">Joost</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li className="heading">
               Wat is dit?
             </li>
             <li>Lessen informatica, maar dan zonder dat geouwehoer dat je in een school te horen krijgt</li>
@@ -35,14 +43,6 @@ const Footer = (props) => {
                 zelf aanpassen op Github
               </a>
             </li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li className="heading">
-              Wie ben jij?
-            </li>
-            <li>Ik ben <a href="https://github.com/joostdecock">Joost</a></li>
           </ul>
         </div>
       </div>

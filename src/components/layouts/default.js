@@ -14,7 +14,7 @@ const DefaultLayout = (props) => {
         </aside>
         <section>
           {!props.noCrumbs && <BreadCrumbs crumbs={props.crumbs} pageTitle={props.title} />}
-          {!props.noTitle && <h1>{props.title}</h1>}
+          {!props.noTitle && <h1 dangerouslySetInnerHTML={{__html: props.title}}/>}
           <div className={`content ${props.wide ? 'wide' : ''}`}>
             {props.children}
             <PrevNext prev={props.prev} next={props.next} />

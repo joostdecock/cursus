@@ -7,6 +7,7 @@ import IntroIcon from '@material-ui/icons/LocalCafe'
 import Icon from '../icons'
 import CarIcon from '@material-ui/icons/DriveEta'
 import MediaIcon from '@material-ui/icons/Panorama'
+import NetworkIcon from '@material-ui/icons/NetworkWifi'
 
 const iStyle = { style: { maxWidth: '32px' } }
 const links = {
@@ -16,6 +17,7 @@ const links = {
   windows: ['Windows', <Icon icon='windows' {...iStyle}/>],
   mac: ['MacOS & Linux', <Icon icon='apple' {...iStyle}/>],
   media: ['Media', <MediaIcon {...iStyle} />],
+  netwerken: ['Netwerken', <NetworkIcon {...iStyle}/>],
 }
 
 const onPath = (slug, chunks) => {

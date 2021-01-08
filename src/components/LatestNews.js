@@ -1,34 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Markdown from 'react-markdown'
-import Spinner from '@freesewing/components/Spinner'
 
 const LatestNews = (props) => {
   useEffect(() => {
     axios
-      .get('https://raw.githubusercontent.com/freesewing/freesewing/develop/LATEST_NEWS.md')
-      .then((result) => {
-        let n = []
-        let a = false
-        for (let line of result.data.split('\n')) {
-          if (line.slice(0, 5) === '#####') {
-            if (a) n.push(a)
-            a = ''
-          }
-          a += '\n' + line
-        }
-        n.push(a)
-        setNews(n)
-      })
+      .get('https://raw.githubusercontent.com/joostdecock/cursus/master/NEWS.md')
+      .then(result => setNews(result.data))
       .catch((err) => console.log(err))
   }, [])
   const [news, setNews] = useState(false)
 
-  return news ? (
-    news.map((a) => <Markdown source={a} />)
-  ) : (
-    <Spinner size="150" />
-  )
+  return news
+    ? <Markdown source={news} />
+    : <p>Een momentje, we laden het nieuws...</p>
 }
 
 export default LatestNews

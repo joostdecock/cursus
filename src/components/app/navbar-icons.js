@@ -3,7 +3,6 @@ import IconButton from '@material-ui/core/IconButton'
 
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
-import SearchIcon from '@material-ui/icons/Search'
 
 const NavbarIcons = ({ toggleDarkMode, theme }) => {
   const colors = {
