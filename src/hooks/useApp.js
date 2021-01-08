@@ -12,11 +12,11 @@ function useApp() {
   const [theme, setTheme] = useLocalStorage('theme', 'light')
 
   // React State
-  const [description, setDescription] = useState('Informatica voor volwassenen')
-  const [image, setImage] = useState(`https://freesewing.org/share/language.wide.jpg`)
+  const [description, setDescription] = useState('Informaticalessen voor (leuke) volwassenen')
+  const [image, setImage] = useState(`https://les.joost.at/splash.png`)
   const [loading, setLoading] = useState(false)
   const [menu, setMenu] = useState(false)
-  const [title, setTitle] = useState('Cursus')
+  const [title, setTitle] = useState('Informaticalessen voor (leuke) volwassenen')
   const [mounted, setMounted] = useState(false) // false until app is mounted
   const [tree, setTree] = useState(useTree())
 
