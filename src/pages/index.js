@@ -13,7 +13,7 @@ const HomePage = (props) => {
     <AppWrapper app={app} noCrumbs>
         <div id='homepage'>
           <div className='nerd'>🤓</div>
-          <h1>Too cool for school</h1>
+          <h1>les.joost.at</h1>
           <p>Informaticalessen voor (leuke) volwassenen</p>
         </div>
     </AppWrapper>
