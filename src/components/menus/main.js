@@ -8,6 +8,7 @@ import Icon from '../icons'
 import CarIcon from '@material-ui/icons/DriveEta'
 import MediaIcon from '@material-ui/icons/Panorama'
 import NetworkIcon from '@material-ui/icons/NetworkWifi'
+import ReferenceIcon from '@material-ui/icons/Book'
 
 const iStyle = { style: { maxWidth: '32px' } }
 const links = {
@@ -18,6 +19,7 @@ const links = {
   mac: ['MacOS & Linux', <Icon icon='apple' {...iStyle}/>],
   media: ['Media', <MediaIcon {...iStyle} />],
   netwerken: ['Netwerken', <NetworkIcon {...iStyle}/>],
+  referentie: ['Referentie', <ReferenceIcon {...iStyle}/>],
 }
 
 const onPath = (slug, chunks) => {

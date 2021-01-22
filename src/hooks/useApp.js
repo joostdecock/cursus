@@ -50,7 +50,7 @@ function useApp() {
     return page.offspring ? ntr.order(page.offspring) : []
   }
 
-  const getNext = (slug) => {
+  const getNext = (slug, count=0) => {
     let ntree = {}
     Object.assign(ntree, tree)
     let next = ntr.getFirstOffspring(slug, ntree)
@@ -88,8 +88,8 @@ function useApp() {
     prevNext
       ? {
           slug,
-          prev: getPrev(slug),
-          next: getNext(slug),
+          //prev: getPrev(slug),
+          //next: getNext(slug),
           crumbs: getCrumbs(slug)
         }
       : {

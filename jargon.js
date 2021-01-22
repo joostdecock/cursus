@@ -26,6 +26,15 @@ const jargon = {
   'volatiel geheugen': 'Geheugen dat onder stroom moet staan om zijn informatie te behouden',
   'harde schijf': 'Een fysieke disk voor de opslag van gegevens',
   'floppy disk': 'Een wisselbare disk voor de opslag van gegevens. Ook diskette genoemt',
+  LAN: 'Local Area Network',
+  WAN: 'Wide Area Network',
+  UTP: 'Unshielded Twisted Pair, is een type kabel gebruikt in Ethernet en telefonie',
+  Ethernet: 'Een netwerkstandaard waarmee computers in een LAN met elkaar communiceren',
+  fiber: 'Van fiberoptics, een glasvezel kabel of verbiding',
+  switch: 'Een toestel dat verschillende computers op het netwerk met elkaar verbindt',
+  backbone: 'Een netwerk dat netwerken verbindt over grote afstand,  letterlijk ruggengraat',
+  bit: "Een 'binaire digit', de basisunit van opslag in een computer die 1 of 0 kan bevatten",
+
 }
 
 module.exports = jargon
